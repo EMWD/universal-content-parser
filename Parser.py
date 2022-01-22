@@ -16,9 +16,9 @@ class Parser():
             headers={'user-agent': config.DEFAULT_HEADERS},
         )
 
-    def get_content_by_tag_class(self, page, tag_class):
+    def get_content_by_tag_class(self, page, tag_name, tag_class):
         soup = self.form_soup(page)
-        return soup.find("div", {"class": tag_class})
+        return soup.find(tag_name, {"class": tag_class})
 
 
 parser = Parser()
