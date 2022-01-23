@@ -3,8 +3,8 @@ from Parser import parser
 import config
 
 
-pages = uf.get_all_pages('https://intuit.ru/studies/courses/532/388/lecture/', 9011, 2)
-subpages = uf.get_all_subpages(pages, 'page', 1)
+pages = uf.get_pages('https://intuit.ru/studies/courses/532/388/lecture/', init_number=9003, search_range=None, step=2)
+subpages = uf.get_subpages(pages, 'page', 1)
 
 with open(config.DATA_FILE_PATH, "w") as file:
     for subpage in subpages:
